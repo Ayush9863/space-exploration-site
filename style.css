@@ -1,0 +1,165 @@
+body {
+    margin: 0px; /* Browser jo default white border deta hai, use hata diya */
+    text-align: center; /* Saara text center mein kar diya */
+    font-family: "Orbitron", sans-serif;
+    color: #82a5ca;
+    overflow: hidden; /* MAGIC TRICK: Isne browser ko bola "bhai scrollbar mat dikhana, bas 1 page dikhao" */
+}
+
+.bg-video{
+position: absolute;/* Video ko background mein bhej diya*/
+ top: 0;
+ left: 0;/* Screen ke top-left kone se shuru karo */
+ width:100%;/* 100% Viewport Width - screen ki poori chaudayi */
+ height:100%;/* 100% Viewport Height - screen ki poori lambayi */
+ object-fit:cover;/* Video ko stretch mat karna, screen ke hisaab 
+ se zoom karke fit kar dena */
+ object-position: center 30%;/*phele wala left-right wale center ke liye 
+ dusra wal top-bottom ke center ke liye video ki chizon ko center mein 
+ lane ke liya use hota hai */
+
+ z-index: -1;/* Video ko sabse peeche (minus 1 layer) bhej diya taaki text uske upar aaye */
+}
+
+.hero-section{
+    position:relative;/*video ko iske ander absolute rakhne ke liye */
+    width:100%;
+    height:100vh;
+}
+
+.terms-section{
+    position: absolute;/* Normal flow se nikalkar bottom pe bheja */
+    bottom: 0;/* Normal flow se nikalkar bottom pe bheja */
+    left: 0;
+    width: 100%;/* Poori screen ki chaudayi le lo */
+    background-color: white;
+    padding:10px 0;/* Text ke upar aur niche thodi jagah banayi */
+    margin:0;
+    color:#82a5ca;
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+    z-index: 1;/* Isko layer 1 pe rakha taaki video ke upar dikhe */
+}
+/* .container{  */
+   
+   /* background-image: url("./images/gif.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center; */
+    /* height: 100%; 
+       position:relative; 
+ }  */
+
+    /* 
+    vh=viewport height
+    vh=browser ki visible height
+    agar browser ki height 800 px hai toh 800px=100vh,400px=50vh
+
+
+    jab screen ka size change hoga mtlb laptop->900px height and phone->700px height
+    Toh 100vh automatically adjust ho jata hai*/
+
+
+
+    /* display:flex;
+    flex-direction: column;
+    align-items: center;
+    ==>ye isliye kiya kyoki display:flex se text aur button dono horizontal mein aa jate toh unhe
+    vertical mein karne ke liye
+     */
+
+
+
+.txt{
+    position: relative;
+    top:-20px;/*humne pehle position ko relative kar diya phir top:-20px kar diya abb element
+    apni original position se 20px uper jayega agar +20ps likhte toh 20px niche hota  */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size:100px;
+}
+
+.btn{
+   position: relative;
+   top:-30px;
+   font-family: "Orbitron", sans-serif;
+   width:180px;
+   height: 50px;
+   font-size:20px ;
+   color: #82a5ca;
+   border-radius: 6px;
+   background: lightgray;
+   transition:transform 0.3s ease,background 0.3s ease;
+   /* display: block;
+   margin: auto; */
+}
+.btn:hover{
+    transform: scale(1.10);
+    background: lightgreen;
+}
+/* 
+hum 
+display:flex;
+justify-content:center;
+se bhi button ko center kar sakte hai lekin hume ye operation .container mein lagana hoga kyoki
+ye operation mein parent child ko control karta hai aur button ka parent container hai */
+
+.underline{
+    display: inline-block;
+    border-bottom: 6px solid white;
+}
+
+#main-logo{
+    padding-top: 50px;
+    width:250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+CSS mein 4 main type ki position hoti hain. Ise ek class ke bacchon (elements) ki tarah samjho:
+
+1. position: static; (Default)
+
+Kya hai: Ye default behaviour hai. Jaise HTML mein likha hai, line-by-line aayega.
+
+Example: School ki assembly mein bacche ek ke peeche ek khade hain. Koi line nahi tod sakta.
+
+2. position: relative;
+
+Kya hai: Ye element apni asli jagah par hi rehta hai, lekin tum ise top, bottom, left, right dekar thoda aage-peeche khiska sakte ho. Sabse badi baat: ye apni purani jagah ki space khali nahi karta, baaki elements ko lagta hai ki ye abhi bhi wahi hai.
+
+Iska sabse bada kaam: Ye absolute wale bacchon ke liye ek "Boundary" (Parent) ka kaam karta hai. (Tumhare code mein humne .container ko relative diya tha).
+
+3. position: absolute; (Hawa mein udne wala)
+
+Kya hai: Isko lagate hi element apni normal line se bahar nikal kar "hawa mein" aa jata hai. Uski purani jagah khatam ho jati hai aur baaki elements uski jagah le lete hain.
+
+Rule: Ye check karta hai ki "Mera kaunsa Parent (jaise div) position: relative hai?". Agar koi relative parent mil jata hai, toh ye us parent ke andar left/right move karta hai. Agar koi nahi milta, toh ye seedha poore screen (body) ke hisaab se move karta hai.
+
+Tumhare code mein kya hua: * bg-video ko absolute dekar hawa mein (background mein) bhej diya.
+
+h3 ko humne absolute dekar bottom: 0 bola. Kyunki uske parent .container par position: relative tha, usne .container ke ekdum bottom par khud ko chipka liya. Agar relative nahi hota, toh wo poore page ke bottom pe bhaag jata aur scrollbar le aata.
+
+4. position: fixed; (Sheeshe par chipka hua)
+
+Kya hai: Ye screen (viewport) par fix ho jata hai. Tum page kitna bhi upar-niche scroll kar lo, ye apni jagah se nahi hilega.
+
+Example: Kisi website par chat ka icon jo hamesha right-bottom mein rehta hai, ya aisi navbar (menu) jo scroll karne par bhi top par chipki rehti hai.
+
+Short Summary:
+
+relative = Apni jagah se thoda hilega, par space nahi chodega.
+
+absolute = Normal flow se bahar nikal kar kisi relative dibbe ke andar khud ko set karega.
+
+fixed = Screen par permanent chipak jayega (scroll ka asar nahi).
+ */
