@@ -32,11 +32,6 @@ z-index:1;
 .navbar a:hover{
 color:white;
 }
-/* ==>.navbar: Yeh tumhara main navigation container hai (<nav class="navbar">). Is class mein tumne bataya hai ki pura navbar page par kahan rahega (jaise top par).
-
-==>.navbar ul: Yeh navbar ke andar jo Unordered List (<ul>) hai, usey target kar raha hai. Isme tumne display: flex; aur gap: 40px; use kiya hai. Isika kamaal hai ki tumhare saare links (Home, About, Missions, Gallery) ek horizontal line mein barabar space ke sath dikh rahe hain, warna wo ek ke neeche ek aate.
-
-==>.navbar a: Yeh navbar ke andar ke Anchor tags (<a> yaani links) ko target karta hai. Yahan tumne links ka color change kiya hai aur text-decoration: none; lagaya hai taki links ke neeche aane wali default blue underline hat jaye. */
 
 .bg-video{
 position: absolute;
@@ -103,6 +98,7 @@ position: absolute;
     padding-top: 100px;
     width:250px;
 }
+
 
 
 
