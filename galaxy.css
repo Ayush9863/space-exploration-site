@@ -1,0 +1,28 @@
+body {
+    margin: 0px; 
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+}
+
+.content-box{
+    background-image: url("images/universe.jpg");
+    background-position: center 30%;
+    background-size: cover;
+    height: 100vh;
+}
+
+h2{
+padding-top: 10px;    
+font-size:80px;
+color:black;
+text-shadow:0 0 20px lightgray;
+}
+
+p{
+color:#d0e7ff;
+position: relative;
+top:-40px;    
+font-size:40px;
+line-height:1.6;
+text-shadow:0 0 20px #d0e7ff;
+}

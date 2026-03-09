@@ -1,0 +1,118 @@
+
+body {
+    margin: 0px; 
+    text-align: center; 
+    font-family: "Orbitron", sans-serif;
+    color: #82a5ca;
+    overflow: hidden; 
+}
+
+.navbar ul{
+display:flex;
+justify-content:center;
+gap:40px;
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.navbar a{
+text-decoration:none;
+color:#82a5ca;
+font-size:20px;
+}
+
+.navbar{
+position:absolute;
+top:10px;
+width:100%;
+z-index:1;
+}
+
+.navbar a:hover{
+color:white;
+}
+/* ==>.navbar: Yeh tumhara main navigation container hai (<nav class="navbar">). Is class mein tumne bataya hai ki pura navbar page par kahan rahega (jaise top par).
+
+==>.navbar ul: Yeh navbar ke andar jo Unordered List (<ul>) hai, usey target kar raha hai. Isme tumne display: flex; aur gap: 40px; use kiya hai. Isika kamaal hai ki tumhare saare links (Home, About, Missions, Gallery) ek horizontal line mein barabar space ke sath dikh rahe hain, warna wo ek ke neeche ek aate.
+
+==>.navbar a: Yeh navbar ke andar ke Anchor tags (<a> yaani links) ko target karta hai. Yahan tumne links ka color change kiya hai aur text-decoration: none; lagaya hai taki links ke neeche aane wali default blue underline hat jaye. */
+
+.bg-video{
+position: absolute;
+ top: 0;
+ left: 0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position: center 30%;
+ z-index: -1;
+}
+
+.hero-section{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.terms-section{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding:10px 0;
+    margin:0;
+    color:#82a5ca;
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.txt{
+    position: relative;
+    top:-20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size:100px;
+}
+
+.btn{
+   position: relative;
+   top:-30px;
+   font-family: "Orbitron", sans-serif;
+   width:180px;
+   height: 50px;
+   font-size:20px ;
+   color: #82a5ca;
+   border-radius: 6px;
+   background: lightgray;
+   transition:transform 0.3s ease,background 0.3s ease;
+  
+}
+.btn:hover{
+    transform: scale(1.10);
+    background: lightgreen;
+}
+.underline{
+    display: inline-block;
+    border-bottom: 6px solid white;
+}
+
+#main-logo{
+    padding-top: 100px;
+    width:250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
